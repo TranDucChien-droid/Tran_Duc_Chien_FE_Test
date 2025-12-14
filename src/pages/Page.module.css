@@ -1,0 +1,9 @@
+.input-container {
+	display: grid;
+    grid-template-columns: 1fr 100px;
+}
+
+.delete-container {
+    display: flex;
+    justify-content: flex-end;
+}
