@@ -2,12 +2,11 @@
     display: grid;
     grid-template-columns: repeat(3, 120px);
     justify-content: space-evenly;
-    /* width: 500px; */
     gap: 50px;
     padding: 0 20px;
     height: 100%;
     margin-top: 20px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgb(223, 216, 216);
 }
 
 .container > a {
