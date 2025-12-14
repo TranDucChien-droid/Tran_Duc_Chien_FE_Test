@@ -1,17 +1,45 @@
 import css from './Page.module.css';
-import { useContext, useMemo } from 'react';
+import { useCallback, useContext, useMemo, useRef, useTransition } from 'react';
 import { TodoContext } from '../App';
 import Container from '../components/container/Container';
-import TodoList from '../components/todo-list/TodoList';
+import TodoList from './todo-list/TodoList';
+import TaskInput from '../components/field-input/TaskInput';
+import Button from '../components/button/Button';
 
 export default function All() {
-	const { list } = useContext(TodoContext);
+	const [, startTransition] = useTransition();
+	const { list, setList } = useContext(TodoContext);
 
-	const displayList = useMemo(() => list, [list]);
+	const txtRef = useRef(null);
+
+	const displayList = useMemo(() => {
+		const data = [...list];
+		return data;
+	}, [list]);
+
+	const onInputChange = (ev) => {
+		txtRef.current = ev.target.value;
+	};
+
+	const handleAdd = useCallback(() => {
+		const payload = [...list];
+		const data = {
+			id: Date.now(), // Tạm thời dùng date làm ID
+			name: txtRef.current,
+			isActive: false,
+		};
+		startTransition(() => {
+			payload.unshift(data);
+			setList(payload);
+		});
+	}, [list, setList]);
 
 	return (
 		<Container>
-			All
+			<div className={css['input-container']}>
+				<TaskInput placeholder="Add details" onChange={onInputChange} />
+				<Button text={'Add'} onClick={handleAdd} />
+			</div>
 			<TodoList list={displayList} />
 		</Container>
 	);

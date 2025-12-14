@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px 0;
+}
+
+.item-container {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.item-container > div {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+    justify-content: center;
+}
+
+.item-span {
+	text-decoration: line-through;
+}
+
+.delete {
+	width: 24px;
+	height: 24px;
+    cursor: pointer;
+}

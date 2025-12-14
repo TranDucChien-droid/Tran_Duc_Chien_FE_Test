@@ -17,8 +17,7 @@
 }
 
 .btn {
-	padding: 5px;
-    height: 25px;
+	padding: 10px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +25,6 @@
 }
 
 .btn-choosen {
-	border-bottom: 2px solid blue;
+	border-bottom: 2px solid rgb(0, 162, 255);
 }
 
