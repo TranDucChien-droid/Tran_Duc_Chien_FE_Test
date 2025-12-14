@@ -25,7 +25,7 @@ export default function Active() {
 	const handleAdd = useCallback(() => {
 		const payload = [...list];
 		const data = {
-			id: 6,
+			id: Date.now(),
 			name: txtRef.current,
 			isActive: false,
 		};
