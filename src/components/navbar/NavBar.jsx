@@ -1,15 +1,14 @@
 import css from './NavBar.module.css';
 import LinkItem from './LinkItem';
-import { useEffect } from 'react';
+import { PATHS } from '../../routes/MainRouter';
 
 export default function NavBar() {
-	useEffect(() => {}, []);
-
+	
 	return (
 		<div className={css['container']}>
-			<LinkItem linkName={'All'} to="/all" />
-			<LinkItem linkName={'Active'} to="/active" />
-			<LinkItem linkName={'Completed'} to="/completed" />
+			<LinkItem linkName={'All'} to={PATHS.ALL} />
+			<LinkItem linkName={'Active'} to={PATHS.ACTIVE} />
+			<LinkItem linkName={'Completed'} to={PATHS.COMPLETED} />
 		</div>
 	);
 }
