@@ -3,18 +3,20 @@ import All from '../pages/All';
 import Active from '../pages/Active';
 import Completed from '../pages/Completed';
 
+const BASE = '/Tran_Duc_Chien_FE_Test/';
+
 export const PATHS = {
-	ALL: '/all',
-	ACTIVE: '/active',
-	COMPLETED: '/completed',
+	ALL: `${BASE}all`,
+	ACTIVE: `${BASE}active`,
+	COMPLETED: `${BASE}completed`,
 };
 
 const MainRouter = () => (
 	<Routes>
-		<Route path="/" element={<Navigate replace to="/all" />}></Route>
-		<Route path={PATHS.ALL} element={<All />}></Route>
-		<Route path={PATHS.ACTIVE} element={<Active />}></Route>
-		<Route path={PATHS.COMPLETED} element={<Completed />}></Route>
+		<Route path="/" element={<Navigate replace to={PATHS.ALL} />} />
+		<Route path={PATHS.ALL} element={<All />} />
+		<Route path={PATHS.ACTIVE} element={<Active />} />
+		<Route path={PATHS.COMPLETED} element={<Completed />} />
 	</Routes>
 );
 
